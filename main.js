@@ -59,13 +59,17 @@ function addStar() {
 Array(50).fill().forEach(addStar);
 
 // Background
+import spaceImg from './space.jpg'
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+
+const spaceTexture = new THREE.TextureLoader().load(spaceImg);
 scene.background = spaceTexture;
 
 // Avatar
 
-const erikTexture = new THREE.TextureLoader().load('erik.jpg');
+import erikImg from './erik.jpg'
+
+const erikTexture = new THREE.TextureLoader().load(erikImg);
 
 const erik = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: erikTexture }));
 
@@ -73,8 +77,11 @@ scene.add(erik);
 
 // Mars
 
-const marsTexture = new THREE.TextureLoader().load('mars.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+import marsImg from './mars.jpg';
+import normalImg from './normal.jpg';
+
+const marsTexture = new THREE.TextureLoader().load(marsImg);
+const normalTexture = new THREE.TextureLoader().load(normalImg);
 
 const mars = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -131,3 +138,4 @@ function animate() {
 }
 
 animate();
+
